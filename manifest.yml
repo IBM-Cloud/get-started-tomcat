@@ -1,6 +1,6 @@
 ---
 applications:
-- name: sample-java-tomcat-helloworld
+- name: GetStartedTomcat
   random-route: true
   memory: 256M
   path: target/TomcatHelloWorldApp.war
