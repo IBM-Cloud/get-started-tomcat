@@ -1,11 +1,11 @@
-# Getting started with Tomcat on Bluemix
+# Getting started with Tomcat on IBM Cloud
 
 In this getting started, we'll take you through a sample Tomcat helloWorld app.
 
 ## Prerequisites
 
 You'll need the following:
-* [Bluemix account](https://console.ng.bluemix.net/registration/)
+* [IBM Cloud account](https://console.ng.bluemix.net/registration/)
 * [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads)
 * [Eclipse IDE for Java EE Developers](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon2)
 * [Git](https://git-scm.com/downloads)
@@ -44,9 +44,9 @@ View your app at: http://localhost:8080/GetStartedTomcat/
 
 Use `shutdown.bat|.sh` to stop your app.  Note you may need to give the commands execute permission.
 
-## 3. Prepare the app for Bluemix deployment
+## 3. Prepare the app for IBM Cloud deployment
 
-To deploy to Bluemix, it can be helpful to set up a manifest.yml file. One is provided for you with the sample. Take a moment to look at it.
+To deploy to IBM Cloud, it can be helpful to set up a manifest.yml file. One is provided for you with the sample. Take a moment to look at it.
 
 The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. In this manifest.yml **random-route: true** generates a random route for your app to prevent your route from colliding with others.  You can replace **random-route: true** with **host: myChosenHostName**, supplying a host name of your choice. [Learn more...](https://console.bluemix.net/docs/manageapps/depapps.html#appmanifest)
  ```
@@ -78,13 +78,13 @@ Replace the *API-endpoint* in the command with an API endpoint from the followin
 | https://api.au-syd.bluemix.net | Sydney         |
 
 
-Login to your Bluemix account:
+Login to your IBM Cloud account:
 
 ```
 cf login
 ```
 
-From within the *get-started-tomcat* directory push your app to Bluemix
+From within the *get-started-tomcat* directory push your app to IBM Cloud
 ```
 cf push
 ```
@@ -100,9 +100,9 @@ cf apps
 ## 6. Developing in Eclipse
 
 
-IBM® Eclipse Tools for {{site.data.keyword.Bluemix}} provides plug-ins that can be installed into an existing Eclipse environment to assist in integrating the developer's integrated development environment (IDE) with Bluemix.
+IBM® Eclipse Tools for IBM Cloud provides plug-ins that can be installed into an existing Eclipse environment to assist in integrating the developer's integrated development environment (IDE) with IBM Cloud.
 
-Download and install  [IBM Eclipse Tools for Bluemix](https://developer.ibm.com/wasdev/downloads/#asset/tools-IBM_Eclipse_Tools_for_Bluemix).
+Download and install  [IBM Eclipse Tools for IBM Cloud](https://developer.ibm.com/wasdev/downloads/#asset/tools-IBM_Eclipse_Tools_for_Bluemix).
 
 Import this sample into Eclipse using `File` -> `Import` -> `Maven` -> `Existing Maven Projects` option.
 
@@ -117,13 +117,13 @@ Run your application locally on the Apache server:
   - Find and select the localhost Tomcat server and press Finish.
   - In a few seconds, your application should be running at http://localhost:8080/GetStartedTomcat/
 
-Create a Bluemix server definition:
+Create a IBM Cloud server definition:
   - In the `Servers` view, right-click -> `New` -> `Server`.
   - Select `IBM` -> `IBM Bluemix` and follow the steps in the wizard.
   - Enter your credentials and click `Next`
   - Select your `org` and `space` and click `Finish`
 
-Run your application on Bluemix:
+Run your application on IBM Cloud:
   - Right click on the `GetStartedTomcat` sample and select `Run As` -> `Run on Server` option.
   - Find and select the `IBM Bluemix` and press Finish.
   - A wizard will guide you with the deployment options. Be sure to choose a unique `Name` for your application.
@@ -131,16 +131,16 @@ Run your application on Bluemix:
 
 Now you have run your code locally and on the cloud!
 
-The `IBM Eclipse Tools for Bluemix` provides many powerful features such as incremental updates, remote debugging, pushing packaged servers, etc. [Learn more](/docs/manageapps/eclipsetools/eclipsetools.html)
+The `IBM Eclipse Tools for IBM Cloud` provides many powerful features such as incremental updates, remote debugging, pushing packaged servers, etc. [Learn more](/docs/manageapps/eclipsetools/eclipsetools.html)
 
 ## 7. Add a database
 
-Next, we'll add a NoSQL database to this application and set up the application so that it can run locally and on Bluemix.
+Next, we'll add a NoSQL database to this application and set up the application so that it can run locally and on IBM Cloud.
 
-1. Log in to Bluemix in your Browser. Browse to the `Dashboard`. Select your application by clicking on its name in the `Name` column.
+1. Log in to IBM Cloud in your Browser. Browse to the `Dashboard`. Select your application by clicking on its name in the `Name` column.
 2. Click on `Connections` then `Connect new`.
 2. In the `Data & Analytics` section, select `Cloudant NoSQL DB` and `Create` the service.
-3. Select `Restage` when prompted. Bluemix will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on Bluemix.
+3. Select `Restage` when prompted. IBM Cloud will restart your application and provide the database credentials to your application using the `VCAP_SERVICES` environment variable. This environment variable is only available to the application when it is running on IBM Cloud.
 
 Environment variables enable you to separate deployment settings from your source code. For example, instead of hardcoding a database password, you can store this in an environment variable which you reference in your source code. [Learn more...](/docs/manageapps/depapps.html#app_env)
 
@@ -153,7 +153,7 @@ We're now going to update your local code to point to this database. We'll store
   cloudant_url=
   ```
 
-2. In your browser open the Bluemix UI, select your App -> Connections -> Cloudant -> View Credentials
+2. In your browser open the IBM Cloud UI, select your App -> Connections -> Cloudant -> View Credentials
 
 3. Copy and paste just the `url` from the credentials to the `url` field of the `cloudant.properties` file and save the changes.  The result will be something like:
   ```
@@ -164,4 +164,4 @@ We're now going to update your local code to point to this database. We'll store
 
   Refresh your browser view at: http://localhost:8080/GetStartedTomcat/. Any names you enter into the app will now get added to the database.
 
-  Your local app and the Bluemix app are sharing the database.  View your Bluemix app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
+  Your local app and the IBM Cloud app are sharing the database.  View your IBM Cloud app at the URL listed in the output of the push command from above.  Names you add from either app should appear in both when you refresh the browsers.
