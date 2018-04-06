@@ -17,7 +17,7 @@ You'll need the following:
 
 Now you're ready to start working with the sample Tomcat app. Clone the repository and change to the directory to where the sample app is located.
 ```
-git clone https://github.com/IBM-Bluemix/get-started-tomcat
+git clone https://github.com/IBM-Cloud/get-started-tomcat
 cd get-started-tomcat
 ```
 
