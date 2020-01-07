@@ -33,7 +33,6 @@ public class CloudantVisitorStore implements VisitorStore{
 	private static final String databaseName = "mydb";
 	
 	public CloudantVisitorStore(){
-		System.out.println("WHERE AM I?");
 		CloudantClient cloudant = createClient();
 		cloudant.deleteDB(databaseName);
     System.out.println("db is deleted!");
